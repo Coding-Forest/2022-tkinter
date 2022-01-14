@@ -16,7 +16,7 @@ from PIL import ImageTk, Image
 # decode from json into python
 import json
 
-os.chdir("C:\\Users\\0woo0\\OneDrive\\문서\\GitHub\\2022-tkinter\\images\\")
+os.chdir("IMAGE_PATH")
 
 root = Tk()
 root.geometry("550x250")
