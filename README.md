@@ -9,6 +9,7 @@
   - `root = Tk()`
     - `root.title("gui title")`
     - `root.geometry("width x height")`
+    - `root.configure(background='colour')`
 
 
 <br>
@@ -125,6 +126,16 @@
 **Database**
 
   - `import sqlite3`
+  - `conn = sqlite3.connect("database.db")`
+  - `cursor = conn.cursor()`
+  - DDL (Data Definition Language)
+    - `cursor.execute("CREATE TABLE table_name col_name1 text, col_name2 int, col_name3 real, col_name4 null, col_name5 blob ")`
+  - DML (Data Manipulation Langauge)
+    - `cursor.execute("INSERT INTO table_name VALUES(:col_name1, :col_name2, :col_name3, :col_name4, :col_name5),`
+      - `{ 'col_name1': col_name1.get() ... } ")`
+  - DQL (Data Query Language)
+    - `cursor.execute("SELECT * FROM table_name)`
+    - `cursor.fetchall()`
 
 <br>
 
@@ -138,10 +149,12 @@
 
   - `b_quit = Button(root, text='message', command=root.quit)`
   - `conn = sqlite3.connect('address_book.db')`
-  - `cursor = conn.cursor()`
+  - `cursor = conn.cursor()`: create a cursor
+  - `cursor.execute()`: create a table
   - `conn.commit()`
   - `conn.close()`
-
+ 
+  - sqlite datatypes: `text`, `int`, `real`, `null`, and `blob`
 
 <br>
 
